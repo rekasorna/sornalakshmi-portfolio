@@ -2,14 +2,14 @@ import { profile } from '../data/profile';
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-28 bg-cream text-ink relative overflow-hidden">
+    <section id="about" className="px-6 py-16 sm:py-24 bg-cream text-ink relative overflow-hidden min-h-[calc(100vh-65px)]">
       {/* Subtle decorative blob */}
       <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-lilac/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-[0.42fr_0.58fr] gap-16 items-start">
           {/* Left */}
-          <div className="sticky top-28">
+          <div>
             <div className="flex items-center gap-3 mb-5">
               <span className="w-6 h-px bg-rose" />
               <p className="font-mono text-xs tracking-[0.25em] uppercase text-rose">01 · About</p>

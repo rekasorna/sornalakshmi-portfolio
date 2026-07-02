@@ -38,7 +38,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="px-6 py-28 bg-cream text-ink relative overflow-hidden">
+    <section id="contact" className="px-6 py-16 sm:py-24 bg-cream text-ink relative overflow-hidden min-h-[calc(100vh-65px)]">
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-rose/8 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">

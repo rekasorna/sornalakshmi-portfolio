@@ -84,7 +84,7 @@ export default function Projects() {
       : rawProjects.filter((p) => getCategory(p.tags) === filter);
 
   return (
-    <section id="projects" className="px-6 py-28 bg-cream text-ink relative overflow-hidden">
+    <section id="projects" className="px-6 py-16 sm:py-24 bg-cream text-ink relative overflow-hidden min-h-[calc(100vh-65px)]">
       <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-lilac/8 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">

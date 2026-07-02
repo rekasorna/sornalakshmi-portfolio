@@ -11,7 +11,7 @@ export default function Skills() {
   const groups = Object.entries(profile.skills);
 
   return (
-    <section id="skills" className="px-6 py-28 bg-ink relative overflow-hidden">
+    <section id="skills" className="px-6 py-16 sm:py-24 bg-ink relative overflow-hidden min-h-[calc(100vh-65px)]">
       {/* Background accents */}
       <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full bg-rose/6 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-lilac/6 blur-3xl pointer-events-none" />

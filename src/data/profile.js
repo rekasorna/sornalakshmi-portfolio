@@ -9,8 +9,8 @@ export const profile = {
   location: 'Vellore, Tamil Nadu, India',
   email: 'sornalakshmi2910@gmail.com',
   phone: '+91 7010248928',
-  github: 'https://github.com/sornalakshmi2910',
-  githubUsername: 'sornalakshmi2910',
+  github: 'https://github.com/rekasorna',
+  githubUsername: 'rekasorna',
   linkedin: 'https://linkedin.com/in/sornalakshmi-g',
 
   about: `Full Stack Developer and Data Analyst with a foundation in the MERN stack and applied deep learning.
@@ -69,7 +69,7 @@ Computer Science (Data Science) at VIT Vellore.`,
       description:
         'Deep learning pipeline (ResNet101, ConvNeXtBase, DenseNet121) trained on 5,000+ agricultural images to classify crop diseases across 10+ categories with 91.2% accuracy, deployed via Streamlit.',
       tags: ['Python', 'CNN', 'Deep Learning', 'Streamlit'],
-      link: 'https://github.com/sornalakshmi2910',
+      link: 'https://github.com/rekasorna',
       stars: 0,
     },
     {
@@ -77,7 +77,7 @@ Computer Science (Data Science) at VIT Vellore.`,
       description:
         'End-to-end RAG healthcare chatbot over 500+ medical documents — vector indexing, retrieval, and a Streamlit interface for symptom-based queries, improving contextual accuracy by 40%.',
       tags: ['Python', 'RAG', 'LLM', 'Streamlit'],
-      link: 'https://github.com/sornalakshmi2910',
+      link: 'https://github.com/rekasorna',
       stars: 0,
     },
     {
@@ -85,7 +85,7 @@ Computer Science (Data Science) at VIT Vellore.`,
       description:
         'Full-stack MERN LMS with course creation, enrollment, and real-time progress tracking. JWT-based auth with role-based access for Admin, Instructor, and Student.',
       tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
-      link: 'https://github.com/sornalakshmi2910',
+      link: 'https://github.com/rekasorna',
       stars: 0,
     },
     {
@@ -93,7 +93,7 @@ Computer Science (Data Science) at VIT Vellore.`,
       description:
         'Machine learning system predicting multiple diseases (diabetes, heart, Parkinson\'s) with high accuracy using ensemble models and a clean Streamlit interface.',
       tags: ['Python', 'Scikit-learn', 'Streamlit', 'ML'],
-      link: 'https://github.com/sornalakshmi2910',
+      link: 'https://github.com/rekasorna',
       stars: 0,
     },
     {
@@ -101,7 +101,7 @@ Computer Science (Data Science) at VIT Vellore.`,
       description:
         'ML-powered crop yield forecasting system using weather, soil, and historical data to help farmers plan better.',
       tags: ['Python', 'Machine Learning', 'Pandas', 'NumPy'],
-      link: 'https://github.com/sornalakshmi2910',
+      link: 'https://github.com/rekasorna',
       stars: 0,
     },
     {
@@ -109,7 +109,7 @@ Computer Science (Data Science) at VIT Vellore.`,
       description:
         'Full-featured PHP-based supermarket management application with inventory tracking, billing, and reporting dashboards.',
       tags: ['PHP', 'MySQL', 'HTML', 'CSS'],
-      link: 'https://github.com/sornalakshmi2910',
+      link: 'https://github.com/rekasorna',
       stars: 0,
     },
   ],

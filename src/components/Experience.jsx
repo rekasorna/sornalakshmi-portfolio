@@ -2,7 +2,7 @@ import { profile } from '../data/profile';
 
 export default function Experience() {
   return (
-    <section id="experience" className="px-6 py-28 bg-ink relative overflow-hidden">
+    <section id="experience" className="px-6 py-16 sm:py-24 bg-ink relative overflow-hidden min-h-[calc(100vh-65px)]">
       <div className="absolute top-1/2 right-0 w-80 h-80 rounded-full bg-rose/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">

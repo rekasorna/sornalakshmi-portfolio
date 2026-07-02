@@ -1,54 +1,58 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { profile } from '../data/profile';
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home',       page: 'home'       },
+  { label: 'About',      page: 'about'      },
+  { label: 'Skills',     page: 'skills'     },
+  { label: 'Projects',   page: 'projects'   },
+  { label: 'Experience', page: 'experience' },
+  { label: 'Contact',    page: 'contact'    },
 ];
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar({ activePage, setPage }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  function navigate(page) {
+    setPage(page);
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'backdrop-blur-xl bg-ink/90 border-b border-white/8 shadow-lg shadow-black/20'
-          : 'bg-transparent'
-      }`}
-    >
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-ink/90 border-b border-white/8 shadow-lg shadow-black/20">
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+
         {/* Logo */}
-        <a href="#top" className="font-display font-semibold tracking-tight text-cream text-lg">
+        <button
+          onClick={() => navigate('home')}
+          className="font-display font-semibold tracking-tight text-cream text-lg hover:text-rose transition-colors duration-200"
+        >
           Sorna<span className="text-rose">.</span>
-        </a>
+        </button>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-sand">
+        <ul className="hidden md:flex items-center gap-6 font-mono text-xs uppercase tracking-widest text-sand">
           {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="hover:text-rose transition-colors duration-200 relative group"
+            <li key={l.page}>
+              <button
+                onClick={() => navigate(l.page)}
+                className={`relative group transition-colors duration-200 pb-0.5 ${
+                  activePage === l.page ? 'text-rose' : 'hover:text-rose'
+                }`}
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-rose transition-all duration-300 group-hover:w-full" />
-              </a>
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-rose transition-all duration-300 ${
+                    activePage === l.page ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </button>
             </li>
           ))}
         </ul>
 
-        {/* CTA */}
+        {/* CTA — desktop */}
         <a
           href={`mailto:${profile.email}`}
           className="hidden md:inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border border-rose/50 text-rose px-4 py-2 rounded-full hover:bg-rose hover:text-ink transition-all duration-300 hover:shadow-lg hover:shadow-rose/20"
@@ -69,25 +73,32 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-96' : 'max-h-0'}`}>
-        <div className="bg-charcoal/95 backdrop-blur-xl border-t border-white/5 px-6 py-6 space-y-4">
+      {/* Mobile dropdown */}
+      <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <div className="bg-charcoal/95 backdrop-blur-xl border-t border-white/5 px-6 py-4 space-y-1">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setMenuOpen(false)}
-              className="block font-mono text-xs uppercase tracking-widest text-sand hover:text-rose transition-colors py-1"
+            <button
+              key={l.page}
+              onClick={() => navigate(l.page)}
+              className={`w-full text-left block font-mono text-xs uppercase tracking-widest py-3 px-3 rounded-lg transition-all duration-200 ${
+                activePage === l.page
+                  ? 'text-rose bg-rose/10'
+                  : 'text-sand hover:text-rose hover:bg-white/5'
+              }`}
             >
+              {activePage === l.page && <span className="mr-2 text-rose">›</span>}
               {l.label}
-            </a>
+            </button>
           ))}
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border border-rose/50 text-rose px-4 py-2 rounded-full mt-2"
-          >
-            Say hello
-          </a>
+          <div className="pt-2">
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest border border-rose/50 text-rose px-4 py-2 rounded-full"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-rose animate-pulse" />
+              Say hello
+            </a>
+          </div>
         </div>
       </div>
     </header>

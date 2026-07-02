@@ -4,7 +4,7 @@ import GithubTerminal from './GithubTerminal';
 
 const ROLES = profile.roles;
 
-export default function Hero() {
+export default function Hero({ setPage }) {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [typing, setTyping] = useState(true);
@@ -35,7 +35,7 @@ export default function Hero() {
   }, [displayed, typing, roleIndex]);
 
   return (
-    <section id="top" className="relative min-h-screen flex items-center px-6 overflow-hidden">
+    <section id="top" className="relative min-h-[calc(100vh-65px)] flex items-center px-6 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-ink">
         <div className="absolute inset-0 bg-gradient-to-br from-rose/10 via-transparent to-lilac/8" />
@@ -89,12 +89,12 @@ export default function Hero() {
 
           {/* CTA row */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#projects"
+            <button
+              onClick={() => setPage('projects')}
               className="px-7 py-3 rounded-full bg-rose text-ink font-mono text-xs uppercase tracking-widest font-medium hover:bg-lilac hover:shadow-lg hover:shadow-lilac/25 transition-all duration-300"
             >
               View Projects
-            </a>
+            </button>
             <a
               href={profile.github}
               target="_blank"
@@ -120,11 +120,6 @@ export default function Hero() {
         <GithubTerminal />
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-40">
-        <span className="font-mono text-[10px] text-sand uppercase tracking-widest">scroll</span>
-        <span className="w-px h-8 bg-gradient-to-b from-sand/60 to-transparent" />
-      </div>
     </section>
   );
 }
