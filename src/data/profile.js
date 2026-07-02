@@ -26,17 +26,30 @@ Computer Science (Data Science) at VIT Vellore.`,
   ],
 
   skills: {
-    'Data Analysis': [
-      'Python', 'SQL', 'R', 'Pandas', 'NumPy', 'Power BI', 'Tableau', 'Matplotlib', 'Seaborn',
+    'Languages': [
+      'Python', 'Java', 'R', 'SQL', 'JavaScript', 'HTML5', 'CSS3',
     ],
-    'Full Stack Dev': [
-      'React.js', 'Next.js', 'Node.js', 'Express.js', 'REST APIs', 'MongoDB', 'MySQL', 'Tailwind CSS',
+    'Frontend': [
+      'React.js', 'Next.js', 'Tailwind CSS',
     ],
-    'AI / ML': [
-      'TensorFlow', 'PyTorch', 'Scikit-learn', 'CNN', 'RAG', 'LLMs', 'Deep Learning',
+    'Backend': [
+      'Node.js', 'Express.js', 'RESTful APIs',
     ],
-    'Tools & Cloud': [
-      'Git', 'GitHub', 'AWS', 'Docker', 'Postman', 'CI/CD', 'Streamlit', 'MLflow',
+    'AI & Machine Learning': [
+      'Machine Learning', 'Deep Learning', 'Computer Vision', 'CNNs',
+      'Neural Networks', 'Predictive Modeling', 'LLMs', 'RAG',
+    ],
+    'Libraries & Frameworks': [
+      'TensorFlow', 'PyTorch', 'Scikit-learn', 'Pandas', 'NumPy',
+    ],
+    'Visualization': [
+      'Power BI', 'Tableau', 'Matplotlib', 'Seaborn',
+    ],
+    'Databases': [
+      'MongoDB', 'MySQL',
+    ],
+    'Cloud & DevOps': [
+      'AWS', 'Docker', 'Git', 'GitHub', 'CI/CD', 'MLflow', 'Postman', 'Streamlit',
     ],
   },
 

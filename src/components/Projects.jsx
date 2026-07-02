@@ -2,15 +2,13 @@ import { useState } from 'react';
 import { profile } from '../data/profile';
 import { useGithubRepos } from '../hooks/useGithubRepos';
 
-const FILTERS = ['All', 'Python', 'React', 'Machine Learning', 'PHP'];
+const FILTERS = ['All', 'Python', 'JavaScript', 'HTML', 'Jupyter Notebook', 'TypeScript'];
 
 function getCategory(tags) {
-  const t = tags.join(' ').toLowerCase();
-  if (t.includes('python') || t.includes('ml') || t.includes('cnn') || t.includes('streamlit') || t.includes('machine learning')) return 'Python';
-  if (t.includes('react') || t.includes('node') || t.includes('mern') || t.includes('express')) return 'React';
-  if (t.includes('rag') || t.includes('llm') || t.includes('scikit') || t.includes('deep learning')) return 'Machine Learning';
-  if (t.includes('php')) return 'PHP';
-  return 'All';
+  if (!tags || tags.length === 0) return 'Other';
+  const lang = tags[0];
+  if (['Python', 'JavaScript', 'HTML', 'Jupyter Notebook', 'TypeScript', 'CSS'].includes(lang)) return lang;
+  return 'Other';
 }
 
 function ProjectCard({ p }) {
@@ -64,7 +62,7 @@ function ProjectCard({ p }) {
 }
 
 export default function Projects() {
-  const { repos, status } = useGithubRepos(profile.githubUsername, { perPage: 6 });
+  const { repos, status } = useGithubRepos(profile.githubUsername, { perPage: 100 });
   const [filter, setFilter] = useState('All');
 
   const rawProjects =
